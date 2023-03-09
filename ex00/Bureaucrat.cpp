@@ -1,5 +1,20 @@
 #include "./Bureaucrat.hpp"
 
+/////////////////////////////////////////////////////////////////////
+
+const char*	Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("The grade of bureaucrat is too high");
+}
+
+
+const char*	Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("The grade of bureaucrat is too low");
+}
+
+/////////////////////////////////////////////////////////////////////
+
 std::string	Bureaucrat::getName(void) const
 {
 	return (_name);
@@ -13,14 +28,14 @@ int		Bureaucrat::getGrade(void) const
 void	Bureaucrat::incrementGrade(void)
 {
 	if (_grade == MAXGRADE)
-		// throw exception
+		throw GradeTooHighException();
 	_grade --;
 }
 
 void	Bureaucrat::decrementGrade(void)
 {
 	if (_grade == MINGRADE)
-		//throw exception
+		throw GradeTooLowException();
 	_grade++;
 }
 
@@ -46,7 +61,10 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
 		MINGRADE(150),
 		MAXGRADE(1)
 {
-	// if (_grade)
+	if (_grade < 1)
+		throw GradeTooHighException();
+	if (_grade > 150)
+		throw	GradeTooLowException();
 }
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& rhs)
@@ -62,8 +80,8 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& rhs)
 Bureaucrat::~Bureaucrat()
 {}
 
-std::ostream& operator<<(std::ostream &stream, const Bureaucrat& b)
+std::ostream& operator<<(std::ostream &stream, const Bureaucrat& bureaucrat)
 {
-	stream << b.getName() << ", bureaucrat grade " << b.getGrade();
+	stream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return (stream);
 }

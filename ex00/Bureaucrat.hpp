@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <exception>
+#include <string>
 
 class Bureaucrat
 {
@@ -19,10 +21,23 @@ class Bureaucrat
 	
 	protected:
 		const std::string	_name;
-		int					_grade;//[1(Highest); 150(Lowest)]
+		int					_grade;
 		const int			MINGRADE;
 		const int			MAXGRADE;
+	
+	public:
+		class	GradeTooHighException : public std::exception
+		{
+			public:
+				virtual	const char *what() const throw();
+		};
+
+		class	GradeTooLowException : public std::exception
+		{
+			public:
+				virtual	const char *what() const throw();
+		};
 };
 
-std::ostream& operator<<(std::ostream &os, const Bureaucrat& b);
+std::ostream& operator<<(std::ostream &, const Bureaucrat&);
 
