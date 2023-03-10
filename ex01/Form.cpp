@@ -21,15 +21,13 @@ const char*	Form::GradeTooLowException::what(void)	const throw()
 	return ("The grade of Form is too low");
 }
 
-void	Form::beSigned(Bureaucrat& bureaucrat)
+void	Form::beSigned(const Bureaucrat& bureaucrat)
 {
+	if (_isSigned)
+		throw	1;
 	if (bureaucrat.getGrade() > _gradeForSigne)
-	{
-		bureaucrat.signForm(_formName, _gradeForSigne);
-		throw	(Form::GradeTooHighException());
-	}
+		throw (Form::GradeTooHighException());
 	_isSigned = true;
-	bureaucrat.signForm(_formName, _gradeForSigne);
 }
 
 

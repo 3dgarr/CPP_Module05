@@ -4,16 +4,17 @@
 #include <exception>
 #include "./Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 	public:
-		void		beSigned(Bureaucrat&);
+		void		beSigned(const Bureaucrat&);
 		std::string	getFormName(void) const;
 		bool		getSignedFlag(void) const;
 		int			getGradeForSigne(void) const;	
 		int			getGradeForExecute(void) const;	
 		
-
 	public:
 		Form();
 		Form(const Form&);
@@ -33,13 +34,11 @@ class Form
 				const char *what() const throw();
 		};
 
-	
 	private:
 		const std::string	_formName;
 		bool				_isSigned;
 		const int			_gradeForSigne;
-		const int			_gradeForExecute;			
-
+		const int			_gradeForExecute;
 };
 
 std::ostream&	operator<<(std::ostream&, const Form&);

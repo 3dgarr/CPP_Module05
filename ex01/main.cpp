@@ -8,13 +8,12 @@ int main()
 		// Form	f("someform", 150, -928);
 		// Form	f("someform", 151, -928);
 		// Form	f("someform", 1000, 8);
-		Form	f("someform", 10, 8);
+		Form	f("someform", 18, 8);
 		Bureaucrat b("babken", 17);
 		
 		std::cout << f << std::endl;
 		std::cout << b << std::endl;
-		
-		f.beSigned(b);
+		b.signForm(f);
 		std::cout << f << std::endl;
 		// std::cout << b << std::endl;
 		// b.incrementGrade();

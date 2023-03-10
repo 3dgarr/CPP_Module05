@@ -15,12 +15,22 @@ const char*	Bureaucrat::GradeTooLowException::what() const throw()
 
 /////////////////////////////////////////////////////////////////////
 
-void	Bureaucrat::signForm(const std::string& formName, int formGrade) const
+void	Bureaucrat::signForm(Form& form) const
 {
-	if (_grade > formGrade)
-		std::cout << "bureaucrat " << _name <<  " couldn't sign form " << formName << ", because " << std::flush;
-	else
-		std::cout <<  "Bureaucrat " << _name << " signed form " << formName << std::endl;	
+	try
+	{
+		form.beSigned(*this);
+		std::cout <<  "Bureaucrat " << _name << " signed form " << form.getFormName() << std::endl;	
+	}
+	catch(const Form::GradeTooHighException& e)
+	{
+		std::cout << "bureaucrat " << _name <<  " couldn't sign form " << form.getFormName() << ", because " << std::flush;
+		std::cout << e.what() << std::endl;
+	}
+	catch(...)
+	{
+		std::cout << "The form " << form.getFormName() << " is already signed" << std::endl;
+	}	
 }
 
 
