@@ -1,0 +1,44 @@
+#pragma once
+
+#include "./AForm.hpp"
+#include <fstream>
+#include <exception>
+
+
+class ShrubberyCreationForm :  public AForm
+{
+	public:
+		void		execute(const Bureaucrat&) const;
+		void		beSigned(const Bureaucrat&);
+		std::string	getFormTarget(void) const;
+		bool		getSignedFlag(void) const;
+		int			getGradeForSigne(void) const;	
+		int			getGradeForExecute(void) const;	
+		
+	public:
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(const ShrubberyCreationForm&);
+		ShrubberyCreationForm(const std::string);
+		ShrubberyCreationForm& operator=(const ShrubberyCreationForm&);
+		~ShrubberyCreationForm();
+
+	protected:
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char *what() const throw();	
+		};
+		class	GradeTooLowException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+
+	private:
+		std::string			_target;
+		bool				_isSigned;
+		const int			_gradeForSigne;
+		const int			_gradeForExecute;
+};
+std::ostream&	operator<<(std::ostream&, const ShrubberyCreationForm&);
+
