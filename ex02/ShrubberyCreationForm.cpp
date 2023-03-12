@@ -1,15 +1,15 @@
 #include "./ShrubberyCreationForm.hpp"
 #include <string>
-std::ostream&	operator<<(std::ostream& stream, const ShrubberyCreationForm& form)
-{
-	std::cout << "FormName        : " << form.getFormName() << std::endl;
-	std::cout << "Target          : " << form.getFormTarget() << std::endl;
-	std::cout << "Signature       : " << form.getSignedFlag() << std::endl;
-	std::cout << "GradeForSigne   : " << form.getGradeForSigne() << std::endl;
-	std::cout << "GradeForExecute : " << form.getGradeForExecute() << std::endl;
+// std::ostream&	operator<<(std::ostream& stream, const ShrubberyCreationForm& form)
+// {
+// 	std::cout << "FormName        : " << form.getFormName() << std::endl;
+// 	std::cout << "Target          : " << form.getFormTarget() << std::endl;
+// 	std::cout << "Signature       : " << form.getSignedFlag() << std::endl;
+// 	std::cout << "GradeForSigne   : " << form.getGradeForSigne() << std::endl;
+// 	std::cout << "GradeForExecute : " << form.getGradeForExecute() << std::endl;
 
-	return (stream);
-}
+// 	return (stream);
+// }
 
 void	ShrubberyCreationForm::beSigned(const Bureaucrat& bureaucrat)
 {

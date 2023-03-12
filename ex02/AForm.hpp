@@ -10,6 +10,7 @@ class AForm
 {
 	public:
 		virtual void		execute(const Bureaucrat&) const = 0;
+		virtual	std::string	getFormTarget(void) const = 0;
 		virtual void		beSigned(const Bureaucrat&);
 		virtual std::string	getFormName(void) const;
 		virtual bool		getSignedFlag(void) const;
@@ -58,4 +59,4 @@ class AForm
 		const int			_gradeForExecute;
 };
 
-// std::ostream&	operator<<(std::ostream&, const AForm&);
+std::ostream&	operator<<(std::ostream&, const AForm&);

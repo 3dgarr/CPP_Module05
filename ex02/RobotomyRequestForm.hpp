@@ -30,5 +30,5 @@ class RobotomyRequestForm :  public AForm
 		const int			_gradeForSigne;
 		const int			_gradeForExecute;
 };
-std::ostream&	operator<<(std::ostream&, const RobotomyRequestForm&);
+// std::ostream&	operator<<(std::ostream&, const RobotomyRequestForm&);
 

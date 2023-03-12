@@ -28,5 +28,5 @@ class ShrubberyCreationForm :  public AForm
 		const int			_gradeForSigne;
 		const int			_gradeForExecute;
 };
-std::ostream&	operator<<(std::ostream&, const ShrubberyCreationForm&);
+// std::ostream&	operator<<(std::ostream&, const ShrubberyCreationForm&);
 

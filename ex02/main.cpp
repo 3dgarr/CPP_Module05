@@ -1,6 +1,7 @@
 #include "./Bureaucrat.hpp"
 #include "./ShrubberyCreationForm.hpp"
 #include "./RobotomyRequestForm.hpp"
+#include "./PresidentialPardonForm.hpp"
 #include "./AForm.hpp"
 
 int main()
@@ -18,15 +19,21 @@ int main()
 		// shurb.execute(bur);
 		// bur.executeForm(shurb);
 
-		RobotomyRequestForm	robot("passport");
-		Bureaucrat			bur("babken", 15);
+		RobotomyRequestForm		robot("passport");
+		ShrubberyCreationForm	shurb("mission");
+		PresidentialPardonForm	president("pastatukht");
+		
+
+		Bureaucrat			bur("babken", 3);
 
 		std::cout << robot << std::endl;
 		bur.executeForm(robot);
 		bur.signForm(robot);
 		std::cout << robot << std::endl;
 		bur.executeForm(robot);
-
+		bur.executeForm(president);
+		bur.signForm(president);
+		bur.executeForm(president);
 	}
 	catch(const Bureaucrat::GradeTooHighException& ex)
 	{
@@ -36,12 +43,4 @@ int main()
 	{
 		std::cerr << ex.what() << std::endl;
 	}
-	catch(const AForm::GradeTooHighException& ex)
-	{
-		std::cerr << ex.what() << std::endl;
-	}
-	catch(const AForm::GradeTooLowException& ex)
-	{
-		std::cerr << ex.what() << std::endl;
-	}	
 }

@@ -1,5 +1,16 @@
 #include "./AForm.hpp"
 
+std::ostream&	operator<<(std::ostream& stream, const AForm& form)
+{
+	std::cout << "FormName        : " << form.getFormName() << std::endl;
+	std::cout << "Target          : " << form.getFormTarget() << std::endl;
+	std::cout << "Signature       : " << form.getSignedFlag() << std::endl;
+	std::cout << "GradeForSigne   : " << form.getGradeForSigne() << std::endl;
+	std::cout << "GradeForExecute : " << form.getGradeForExecute() << std::endl;
+
+	return (stream);
+}
+
 const char*	AForm::GradeTooHighException::what(void)	const throw()
 {
 	return ("The grade of AForm is too high");
