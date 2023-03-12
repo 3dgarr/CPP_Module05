@@ -95,7 +95,7 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	if (this != &rhs)
 	{
 		AForm::operator=(rhs);
-		const_cast<std::string&>(_target) = rhs._target;
+		_target = rhs._target;
 		_isSigned = rhs._isSigned;
 		const_cast<int&>(_gradeForSigne) = rhs._gradeForSigne;
 		const_cast<int&>(_gradeForExecute) = rhs._gradeForExecute;

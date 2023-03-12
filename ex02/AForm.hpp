@@ -45,6 +45,11 @@ class AForm
 			public:
 				const char *what() const throw();
 		};
+		class	ExecutionFailed: public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
 
 	private:
 		const std::string	_formName;

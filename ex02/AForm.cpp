@@ -21,6 +21,11 @@ const char*	AForm::FormIsNotSigned::what(void)	const throw()
 	return ("The Form is not signed to be executed");
 }
 
+const char*	AForm::ExecutionFailed::what(void)	const throw()
+{
+	return ("Execution failed");
+}
+
 void	AForm::beSigned(const Bureaucrat& bureaucrat)
 {
 	if (_isSigned)

@@ -30,7 +30,6 @@ void	Bureaucrat::signForm(AForm& form) const
 	catch(const AForm::IsAlreadySigned& e)
 	{
 		std::cout << e.what() << std::endl;
-		// std::cout << "The form " << form.getFormName() << " is already signed" << std::endl;
 	}	
 }
 

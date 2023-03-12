@@ -1,20 +1,31 @@
 #include "./Bureaucrat.hpp"
 #include "./ShrubberyCreationForm.hpp"
+#include "./RobotomyRequestForm.hpp"
 #include "./AForm.hpp"
 
 int main()
 {
 	try
 	{
-		ShrubberyCreationForm g("mission");
-		Bureaucrat b("babken", 15);
-		std::cout << g << std::endl;
+		// ShrubberyCreationForm	shurb("mission");
+		// RobotomyRequestForm		robot("passport");
+		// Bureaucrat bur("babken", 15);
+		// std::cout << shurb << std::endl;
 
-		b.signForm(g);
+		// bur.signForm(shurb);
 
-		// std::cout << g << std::endl;
-		// g.execute(b);
-		b.executeForm(g);
+		// std::cout << shurb << std::endl;
+		// shurb.execute(bur);
+		// bur.executeForm(shurb);
+
+		RobotomyRequestForm	robot("passport");
+		Bureaucrat			bur("babken", 15);
+
+		std::cout << robot << std::endl;
+		bur.executeForm(robot);
+		bur.signForm(robot);
+		std::cout << robot << std::endl;
+		bur.executeForm(robot);
 
 	}
 	catch(const Bureaucrat::GradeTooHighException& ex)

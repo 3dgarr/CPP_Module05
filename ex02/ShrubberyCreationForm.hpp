@@ -22,18 +22,6 @@ class ShrubberyCreationForm :  public AForm
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm&);
 		~ShrubberyCreationForm();
 
-	protected:
-		class GradeTooHighException : public std::exception
-		{
-			public:
-				const char *what() const throw();	
-		};
-		class	GradeTooLowException : public std::exception
-		{
-			public:
-				const char *what() const throw();
-		};
-
 	private:
 		std::string			_target;
 		bool				_isSigned;
