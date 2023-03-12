@@ -1,16 +1,5 @@
 #include "./RobotomyRequestForm.hpp"
 
-// std::ostream&	operator<<(std::ostream& stream, const RobotomyRequestForm& form)
-// {
-// 	std::cout << "FormName        : " << form.getFormName() << std::endl;
-// 	std::cout << "Target          : " << form.getFormTarget() << std::endl;
-// 	std::cout << "Signature       : " << form.getSignedFlag() << std::endl;
-// 	std::cout << "GradeForSigne   : " << form.getGradeForSigne() << std::endl;
-// 	std::cout << "GradeForExecute : " << form.getGradeForExecute() << std::endl;
-
-// 	return (stream);
-// }
-
 void	RobotomyRequestForm::beSigned(const Bureaucrat& bureaucrat)
 {
 	if (_isSigned)
