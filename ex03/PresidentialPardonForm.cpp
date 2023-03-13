@@ -16,12 +16,10 @@ void	PresidentialPardonForm::execute(const Bureaucrat& bureaucrat) const
 	if (!_isSigned)
 		throw (AForm::FormIsNotSigned());
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-	
-
 }
 
-
 //////////////////////////////////////////////////////////////////////////////////////////
+
 std::string	PresidentialPardonForm::getFormTarget(void) const
 {
 	return (_target);	

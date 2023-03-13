@@ -3,7 +3,6 @@
 #include "./AForm.hpp"
 #include <exception>
 
-
 class PresidentialPardonForm :  public AForm
 {
 	public:

@@ -44,10 +44,8 @@ void	Bureaucrat::executeForm(const AForm& form) const
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
 }
-
-
+//////////////////////////////////////////////////////////////
 
 std::string	Bureaucrat::getName(void) const
 {

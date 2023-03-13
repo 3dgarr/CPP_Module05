@@ -20,20 +20,18 @@ void	ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const
 	std::string fileName = _target +"_shrubbery";
 	std::ofstream osTree(fileName.c_str());
 	std::string		tree = \
-"                             0\n\
-						##\n\
-						####\n\
-					#o####\n\
-					#####o##\n\
+"						 ##\n\
+					    ####\n\
+					   #o####\n\
+					  #####o##\n\
 					#o####|#/###\n\
-					####|/#o#\n\
-					# }|{  #\n\
-						}|{\n\
-					edgghaza\n";
+					  ####|/#o#\n\
+					   # }|{  #\n\
+						 }|{\n\
+					  edgghaza\n";
 	osTree << tree;
 	osTree.close();		
 }
-
 
 //////////////////////////////////////////////////////////////////////////////////////////
 std::string	ShrubberyCreationForm::getFormTarget(void) const

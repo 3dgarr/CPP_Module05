@@ -26,14 +26,16 @@ int main()
 
 		Bureaucrat			bur("babken", 3);
 
-		std::cout << robot << std::endl;
-		bur.executeForm(robot);
-		bur.signForm(robot);
-		std::cout << robot << std::endl;
-		bur.executeForm(robot);
-		bur.executeForm(president);
-		bur.signForm(president);
-		bur.executeForm(president);
+		bur.signForm(shurb);
+		bur.executeForm(shurb);
+		// std::cout << robot << std::endl;
+		// bur.executeForm(robot);
+		// bur.signForm(robot);
+		// std::cout << robot << std::endl;
+		// bur.executeForm(robot);
+		// bur.executeForm(president);
+		// bur.signForm(president);
+		// bur.executeForm(president);
 	}
 	catch(const Bureaucrat::GradeTooHighException& ex)
 	{

@@ -16,27 +16,31 @@ int main()
 	{
 
 		Intern  	someRandomIntern;
-		Bureaucrat	bur("babken", 15);
+		Bureaucrat	bur("babken", 5);
 		AForm*		rrf;
 
-		rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
-		
+		rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");		
 		(rrf ? std::cout << *rrf << std::endl : std::cout << "NULL" << std::endl);
-		// std::cout << *rrf << std::endl;
 		delete rrf;
+		
 		rrf = someRandomIntern.makeForm("ShrubberyCreationForm", "Edgar");
 		(rrf ? std::cout << *rrf << std::endl : std::cout << "NULL" << std::endl );
-		// std::cout << *rrf << std::endl;
 		delete rrf;
+		
 		rrf = someRandomIntern.makeForm("PresidentialPardonForm", "Vzgo");
-		// std::cout << *rrf << std::endl;
 		(rrf ? std::cout << *rrf << std::endl : std::cout << "NULL" << std::endl );
-
 		delete rrf;
+		
 		rrf = someRandomIntern.makeForm("blah", "Vzgo");
 		(rrf ? std::cout << *rrf << std::endl : std::cout << "NULL" << std::endl );
 		delete rrf;
-		
+
+
+		rrf = someRandomIntern.makeForm("PresidentialPardonForm", "Vzgo");
+		(rrf ? std::cout << *rrf << std::endl : std::cout << "NULL" << std::endl );
+		bur.signForm(*rrf);
+		bur.executeForm(*rrf);
+		delete rrf;
 	}
 	catch(const Bureaucrat::GradeTooHighException& ex)
 	{

@@ -4,7 +4,6 @@
 #include <fstream>
 #include <exception>
 
-
 class ShrubberyCreationForm :  public AForm
 {
 	public:

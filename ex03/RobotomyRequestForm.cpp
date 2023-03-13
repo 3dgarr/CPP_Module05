@@ -26,8 +26,8 @@ void	RobotomyRequestForm::execute(const Bureaucrat& bureaucrat) const
 		throw	AForm::ExecutionFailed();
 }
 
-
 //////////////////////////////////////////////////////////////////////////////////////////
+
 std::string	RobotomyRequestForm::getFormTarget(void) const
 {
 	return (_target);	
@@ -47,6 +47,7 @@ int		RobotomyRequestForm::getGradeForExecute(void) const
 {
 	return (_gradeForExecute);	
 }
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 RobotomyRequestForm::RobotomyRequestForm()

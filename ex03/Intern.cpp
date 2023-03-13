@@ -1,6 +1,5 @@
 #include "./Intern.hpp"
 
-
 int	Intern::getFunctionIndex(const std::string fName) const
 {
 	const std::string functionNames[] = 
@@ -55,8 +54,6 @@ AForm* Intern::makeForm(const std::string formName, const std::string target) co
 	return (NULL);
 }
 
-
-
 Intern::Intern()
 {}
 
@@ -77,10 +74,5 @@ Intern&	Intern::operator=(const Intern& rhs)
 const char*	Intern::UndefinedFunctionName::what(void) const throw()
 {
 	const char *err = "Undefined Form Name";
-	// const char *err = std::string(_formName + " is Undefined Form Name").c_str();
 	return (err);
 }
-
-// Intern::UndefinedFunctionName::UndefinedFunctionName(const std::string formName)
-// 	: _formName(formName)
-// {}

@@ -13,13 +13,13 @@ std::ostream&	operator<<(std::ostream& stream, const AForm& form)
 
 const char*	AForm::GradeTooHighException::what(void)	const throw()
 {
-	return ("The grade of AForm is too high");
+	return ("The grade of Form is too high");
 	
 }
 
 const char*	AForm::GradeTooLowException::what(void)	const throw()
 {
-	return ("The grade of AForm is too low");
+	return ("The grade of Form is too low");
 }
 
 const char*	AForm::IsAlreadySigned::what(void)	const throw()

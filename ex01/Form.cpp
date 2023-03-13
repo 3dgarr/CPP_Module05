@@ -15,7 +15,6 @@ const char*	Form::GradeTooHighException::what(void)	const throw()
 	return ("The grade of Form is too high");
 }
 
-
 const char*	Form::GradeTooLowException::what(void)	const throw()
 {
 	return ("The grade of Form is too low");
@@ -51,6 +50,7 @@ int		Form::getGradeForExecute(void) const
 	return (_gradeForExecute);	
 }
 
+///////////////////////////////////////////////////////////////
 
 Form::Form()
 	:	_formName("UnknownForm"),
